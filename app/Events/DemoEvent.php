@@ -10,18 +10,23 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class DemoEvent
+class DemoEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+
+    /**
+     * @var String
+     */
+    public $message;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(String $string)
     {
-        //
+        $this->message = $string;
     }
 
     /**
@@ -31,6 +36,9 @@ class DemoEvent
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new Channel('demo');
+    }
+    public function broadcastAs(){
+        return 'demo';
     }
 }
