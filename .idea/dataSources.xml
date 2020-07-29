@@ -8,9 +8,9 @@
       <jdbc-url>jdbc:mysql://localhost:3306/bongobitan</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="MySQL for 5.1 - bongobitan@localhost" uuid="5234a547-c805-4933-a273-fcd9e501f1fc">
-      <driver-ref>mysql</driver-ref>
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/bongobitan</jdbc-url>
     </data-source>
   </component>

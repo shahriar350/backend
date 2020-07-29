@@ -36,4 +36,11 @@ class ProductRelatedController extends Controller
             }
         }
     }
+    //offer start
+    function offer(){
+        return view('admin.product.offer');
+    }
+    //offer end
+
+
 }

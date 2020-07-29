@@ -4,7 +4,7 @@
 <!-- Mirrored from coderthemes.com/hyper/saas/pages-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 28 Jun 2020 10:28:58 GMT -->
 <head>
     <meta charset="utf-8"/>
-    <title>@yield('title')</title>
+    <title>@yield('title') | Bongobitan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
     <meta content="Coderthemes" name="author"/>

@@ -20,11 +20,6 @@ Route::post('/login', 'AuthController@login');
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return new \App\Http\Resources\UserResource($request->user());
 });
-
-Route::get('/', function () {
-    broadcast(new \App\Events\DemoEvent('hello'));
-    return 'ok';
-});
 Route::post('/user/verification/{id}', 'AuthController@verify');
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('user/seller/request', 'api\SellerProfileController@seller_request');
@@ -42,6 +37,13 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::post('/seller/shop/location/delete/{id}',"api\SellerProfileController@location_delete");
         Route::post('/seller/shop/location/info/update/{id}',"api\SellerProfileController@location_info_update");
         Route::post('/seller/shop/location/add/{id}',"api\SellerProfileController@location_add");
+        //product
+        Route::get('/seller/product/init',"api\SellerProductController@initProduct");
+        Route::post('/seller/product/basic/upload',"api\SellerProductController@basicUpload");
+        Route::get('/seller/product/check/{id}',"api\SellerProductController@checkProduct");
+        Route::post('/seller/product/image/upload/{id}',"api\SellerProductController@uploadImage");
+        Route::get('/seller/product/image/all/{id}',"api\SellerProductController@allProductImage");
+        Route::post('/seller/product/{product_id}/image/delete/{image_id}',"api\SellerProductController@deleteProductImage");
     });
 });
 

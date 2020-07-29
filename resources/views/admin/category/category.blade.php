@@ -23,15 +23,16 @@
             <ul>
                 @foreach($categories as $category)
                     @if($category->parent === null)
-                        <li class="font-20 d-inline-block">{{ ucfirst($category->name) }}</li>
-                        <form class="d-inline-block" action="{{ route('admin.category.remove',$category->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" style="background: no-repeat;border: none;"><i class="bx bx-trash mx-3 text-danger"></i></button>
-                        </form>
-                        @if(count($category->children) > 0)
-                            @include('admin.category.child_node',['data' => $category->children])
-                        @endif
+                        <li class="font-20 my-2">{{ ucfirst($category->name) }}
+                            <form class="d-inline-block" action="{{ route('admin.category.remove',$category->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" style="background: no-repeat;border: none;"><i class="bx bx-trash mx-3 text-danger"></i></button>
+                            </form>
+                            @if(count($category->children) > 0)
+                                @include('admin.category.child_node',['data' => $category->children])
+                            @endif
+                        </li>
                     @endif
                 @endforeach
             </ul>

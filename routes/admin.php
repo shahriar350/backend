@@ -12,4 +12,6 @@ Route::group(['prefix' => 'bongopanel'],function (){
     Route::get('categories','ProductRelatedController@category')->name('admin.category');
     Route::post('categories/add','ProductRelatedController@category_post')->name('admin.category.post');
     Route::delete('categories/remove/{id}','ProductRelatedController@category_remove')->name('admin.category.remove');
+
+    Route::get('product/offer','ProductRelatedController@offer')->name('admin.product.offer');
 });

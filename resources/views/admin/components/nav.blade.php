@@ -28,6 +28,12 @@
                 <span> Category </span>
             </a>
         </li>
+        <li class="side-nav-item" {{ request()->is('bongopanel/product/offer') ? 'mm-active' : '' }}>
+            <a href="{{ route('admin.product.offer') }}" class="side-nav-link">
+                <i class="bx bx-bracket"></i>
+                <span> Product Offer </span>
+            </a>
+        </li>
 
 
 

@@ -57,7 +57,7 @@ class SellerProfileController extends Controller
                 return response('We will contact you soon', 200);
             }
         } else {
-            return response('You are already a seller', 200);
+            return response()->json(['message' => 'You are already a seller'],422);
         }
     }
 
