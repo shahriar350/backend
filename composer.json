@@ -22,7 +22,7 @@
         "predis/predis": "^1.1",
         "realrashid/sweet-alert": "^3.1",
         "santigarcor/laratrust": "^6.1",
-        "twbs/bootstrap": "5.0.0-alpha1"
+        "vinkla/hashids": "^8.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

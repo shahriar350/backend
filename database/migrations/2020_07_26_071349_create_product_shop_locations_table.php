@@ -16,6 +16,8 @@ class CreateProductShopLocationsTable extends Migration
         Schema::create('product_shop_locations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_shop');
+            $table->integer('quantity');
+            $table->boolean('stock')->default(0);
             $table->foreign('product_shop')->on('product_shops')->references('id')
                 ->cascadeOnDelete();
             $table->unsignedBigInteger('location');

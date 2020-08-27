@@ -42,4 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
     function get_seller(){
         return $this->hasOne('App\Seller','user','id');
     }
+    function get_cart(){
+        return $this->hasOne('App\Cart','user','id');
+    }
 }

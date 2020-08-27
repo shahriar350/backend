@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Hashids\Hashids;
 
 class UserResource extends JsonResource
 {
@@ -14,7 +15,9 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
+        $hashId = new Hashids();
         return [
+            'id' => $hashId->encode($this->id) ,
             'name' => ucfirst($this->name),
             'email' => $this->email,
             'seller' => auth()->user()->hasRole('seller') ? true : false,

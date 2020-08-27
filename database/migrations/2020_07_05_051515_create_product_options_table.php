@@ -15,6 +15,10 @@ class CreateProductOptionsTable extends Migration
     {
         Schema::create('product_options', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product');
+            $table->string('name');
+            $table->foreign('product')->on('products')->references('id')
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }

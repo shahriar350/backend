@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('url')->nullable();
+            $table->char('url',60);
             $table->string('name');
             $table->float('price');
             $table->unsignedBigInteger('seller');
@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->string('offerStart')->nullable();
             $table->string('offerEnd')->nullable();
             $table->string('offerType')->nullable();
+            $table->boolean('offerStatus')->default(0);
             $table->tinyInteger('offerMinimumBuy')->nullable();
             $table->foreign('seller')->references('id')->on('sellers')
                 ->cascadeOnDelete();
